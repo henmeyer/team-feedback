@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :team_users
+  resources :accounts
+  resources :users
+  resources :teams
+  resources :feedbacks
+  resources :account_users, only: [ :create, :destroy ]
+  resources :team_users, only: [ :create, :destroy ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
