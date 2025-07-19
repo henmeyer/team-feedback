@@ -16,9 +16,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_011620) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id", "user_id"], name: "index_account_users_on_account_id_and_user_id", unique: true
-    t.index ["account_id"], name: "index_account_users_on_account_id"
-    t.index ["user_id"], name: "index_account_users_on_user_id"
+    t.index [ "account_id", "user_id" ], name: "index_account_users_on_account_id_and_user_id", unique: true
+    t.index [ "account_id" ], name: "index_account_users_on_account_id"
+    t.index [ "user_id" ], name: "index_account_users_on_user_id"
   end
 
   create_table "accounts", force: :cascade do |t|
@@ -37,10 +37,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_011620) do
     t.string "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id", "receiverable_type", "receiverable_id"], name: "idx_on_account_id_receiverable_type_receiverable_id_26559036bf", unique: true
-    t.index ["account_id"], name: "index_feedbacks_on_account_id"
-    t.index ["receiverable_type", "receiverable_id"], name: "index_feedbacks_on_receiverable"
-    t.index ["sender_id"], name: "index_feedbacks_on_sender_id"
+    t.index [ "account_id", "receiverable_type", "receiverable_id" ], name: "idx_on_account_id_receiverable_type_receiverable_id_26559036bf", unique: true
+    t.index [ "account_id" ], name: "index_feedbacks_on_account_id"
+    t.index [ "receiverable_type", "receiverable_id" ], name: "index_feedbacks_on_receiverable"
+    t.index [ "sender_id" ], name: "index_feedbacks_on_sender_id"
   end
 
   create_table "team_users", force: :cascade do |t|
@@ -48,9 +48,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_011620) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id", "user_id"], name: "index_team_users_on_team_id_and_user_id", unique: true
-    t.index ["team_id"], name: "index_team_users_on_team_id"
-    t.index ["user_id"], name: "index_team_users_on_user_id"
+    t.index [ "team_id", "user_id" ], name: "index_team_users_on_team_id_and_user_id", unique: true
+    t.index [ "team_id" ], name: "index_team_users_on_team_id"
+    t.index [ "user_id" ], name: "index_team_users_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -59,8 +59,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_011620) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_teams_on_account_id"
-    t.index ["owner_id"], name: "index_teams_on_owner_id"
+    t.index [ "account_id" ], name: "index_teams_on_account_id"
+    t.index [ "owner_id" ], name: "index_teams_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
