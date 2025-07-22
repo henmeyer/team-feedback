@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root to: "dashboard#index"
+
+  get "/app", to: "dashboard#index"
+  get "/app/*params", to: "dashboard#index"
+
   resources :team_users
   resources :accounts
   resources :users
